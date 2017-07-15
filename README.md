@@ -1,4 +1,4 @@
-# Ngmodal
+# angular2-modal demo
 
 Demo for the: https://github.com/shlomiassaf/angular2-modal with angular 4 dependencies 
 
