@@ -3,6 +3,9 @@ import {Modal} from "angular2-modal/plugins/bootstrap";
 
 @Component({selector: 'app-root', template: `<button (click)="onClick()">Alert</button>`, styleUrls: ['./app.component.css']})
 export class AppComponent {
+  title = "Sample title";
+  body = "This is dynamic body text from the typescript variable"
+
   constructor(public modal : Modal) {}
 
   onClick() {
@@ -11,12 +14,11 @@ export class AppComponent {
       .confirm()
       .size('sm')
       .showClose(true)
-      .title('A simple Alert style modal window')
+      .title(this.title)
       .okBtn('Accept')
       .cancelBtn('Reject')
       .body(`
-            <h4>Alert is a classic (title/body/footer) 1 button modal window that 
-            does not block.</h4>`)
+            <h4>Classic confirm popup</h4> ` + this.body)
       .open();
 
     dialog.then((resultPromise) => {
